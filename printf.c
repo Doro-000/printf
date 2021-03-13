@@ -8,10 +8,8 @@
  */
 int printf(const char *format, ...)
 {
-	char tag;
-	char *check;
+	char tag, *check, temp;
 	int count = 0;
-	char temp;
 	va_list args;
 
 	va_start(args, format);
@@ -19,6 +17,7 @@ int printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
+			format++;
 			switch (*format)
 			{
 				case 'c':
@@ -39,7 +38,6 @@ int printf(const char *format, ...)
 					format++;
 					break;
 				default:
-					count++;
 					format++;
 					break;
 			}
