@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
- * printf - printf test function
+ * _printf - printf test function
  * @format: format
  *
  * Return: character count
  */
-int printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	char tag, *check, temp;
 	int count = 0;
