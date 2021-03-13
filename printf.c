@@ -10,37 +10,45 @@ int printf(const char *format, ...)
 {
 	char tag;
 	char *check;
-	int i = 0, count;
+	int count = 0;
+	char temp;
 	va_list args;
 
 	va_start(args, format);
 	while (*format)
 	{
-		switch (current)
-	        {
-			case 'c':
-				printf("%c", va_arg(args, int));
-				comma(i, index);
-				i++;
-				break;
-			case 'i':
-				printf("%d", va_arg(args, int));
-				comma(i, index);
-				i++;
-				break;
-			case '%':
-				printf("%f", va_arg(args, double));
-				comma(i, index);
-				i++;
-				break;
-			case 's':
-				printf("%s", nil(va_arg(args, char *)));
-				comma(i, index);
-				i++;
-				break;
-			default:
-				i++;
-				break;
+		if (*format == '%')
+		{
+			switch (*format)
+			{
+				case 'c':
+					temp = va_arg(args, int);
+					write(1, &temp, 1);
+					format++;
+					break;
+// 				case 'd':
+// 					print(va_arg(args, int), &count);
+// 					format++;
+// 					break;
+				case '%':
+					print("%", &count);
+					format++;
+					break;;
+				case 's':
+					print(va_arg(args, char *), &count);
+					format++;
+					break;
+				default:
+					count++;
+					format++;
+					break;
+			}
+		}
+		else
+		{
+			write(1, format, 1);
+			count++;
+			format++;
 		}
 	}
 	printf("\n");
