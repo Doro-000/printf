@@ -2,8 +2,36 @@
 #define HOLBERTON_H
 
 #include <unistd.h>
+#include <stdlib.h>
 
+/**
+ * map - a struct to map format specifier with functions
+ * @conversion_specifier: a char to represent a conversion specifier
+ * @function: address of corresponding function
+ */
+typedef sruct map_t
+{
+	char *conversion_specifier;
+	void (*function)(va_list arguments, int *count);
+} map;
+
+/* main _printf function */
 int _printf(const char *format, ...);
+
+/*--------Utility functions---------*/
+void print_char(va_list args, int *count);
+void print_str(va_list args, int *count);
+void print_int(va_list args, int *count);
+
+/*--------Helper functions---------*/
+/*helpers.c*/
+void reverse_string(char *string, int length);
+int _strlen(char *string);
+char *_itoa(int num, char *string);
 void print(char *, int *);
+void _putchar(char, int *);
+
+/*helpers_2.c*/
+int _numlen(int num);
 
 #endif /*HOLBERTON_H*/
