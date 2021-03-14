@@ -17,3 +17,30 @@ int _numlen(int num)
 	}
 	return (len);
 }
+
+/**
+ * _numlen - counts the number of digits in a number
+ * @num: number to be counted
+ *
+ * Return: pointer to helper function
+ */
+int (*looper(const char *format, int *count, va_list args))(va_list, int)
+{
+	map mapping[] = {
+		{'c', print_char},{'d', print_int},
+		{'i', print_int},{'s', print_str}
+	}
+	int i = 0;
+	void (*f)(va_list args, int *count);
+
+	for (; i < 5; i++)
+	{
+		if (*format == mapping[i].type)
+		{
+			f = mapping[i].func;
+			f(args, count);
+			flag = 1;
+		}
+	}
+	return (f);
+}
