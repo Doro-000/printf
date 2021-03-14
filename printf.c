@@ -20,7 +20,9 @@ int _printf(const char *format, ...)
 			format++;
 			f = looper(*format, &flag);
 			if (f != NULL)
+			{
 				f(args, &count);
+			}
 			else if(*format == '%')
 			{
 				_putchar(*format, &count);
@@ -42,28 +44,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-// 			switch (*format)
-// 			{
-// 				case 'c':
-// 					temp = va_arg(args, int);
-// 					write(1, &temp, 1);
-// 					format++;
-// 					break;
-// // 				case 'd':
-// // 					print(va_arg(args, int), &count);
-// // 					format++;
-// // 					break;
-// 				case '%':
-// 					print("%", &count);
-// 					format++;
-// 					break;;
-// 				case 's':
-// 					print(va_arg(args, char *), &count);
-// 					format++;
-// 					break;
-// 				default:
-// 					format++;
-// 					break;
-// 			}
-		}
