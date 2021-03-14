@@ -36,3 +36,41 @@ int _strlen(char *string)
 		len++;
 	return (len);
 }
+
+/**
+ * _itoa - converts a number to a string
+ * @num: number to be converted
+ * @string: char buffer to store the string in
+ *
+ * Return: pointer to the final string
+ */
+char *_itoa(int num, char *string)
+{
+	int i = 0, is_negative = 0;
+
+	if (num == 0)
+	{
+		string[i] = '0';
+		string[i++] = '\0';
+		return (string);
+	}
+	if (num < 0)
+	{
+		is_negative = 1;
+		num *= -1;
+	}
+	while (num)
+	{
+		string[i] = (num % 10) + '0';
+		num /= 10;
+		i++;
+	}
+	if (is_negative)
+	{
+		string[i] = '-';
+		i++;
+	}
+	string[i] = '\0';
+	reverse_string(string, _strlen(string));
+	return (string);
+}
