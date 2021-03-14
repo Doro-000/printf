@@ -13,7 +13,7 @@
  */
 typedef struct map_t
 {
-	char *conversion_specifier;
+	char conversion_specifier;
 	void (*function)(va_list arguments, int *count);
 } map;
 
