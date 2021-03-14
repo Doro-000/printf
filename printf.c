@@ -8,8 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, flag = 0;
-	int a;
+	int count = 0;
 	void (*f)(va_list args, int *count);
 	va_list args;
 
@@ -44,6 +43,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
-	a = flag;
-	return (a);
+	return (0);
 }
