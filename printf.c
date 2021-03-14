@@ -18,17 +18,10 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (!flag & *format != '%')
-			{
-				f = looper(*format, &flag);
-				if (f != NULL)
-					f(args, &count);
-				else
-				{
-					_putchar(*format, &count);
-					format++;
-				}
-			else
+			f = looper(*format, &flag);
+			if (f != NULL)
+				f(args, &count);
+			else if(*format == '%')
 			{
 				_putchar(*format, &count);
 				format++;
