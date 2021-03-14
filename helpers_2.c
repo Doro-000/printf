@@ -24,7 +24,7 @@ int _numlen(int num)
  *
  * Return: pointer to helper function
  */
-void (*looper(const char *format, int *flag))(va_list, int *)
+void (*looper(char *format, int *flag))(va_list, int *)
 {
 	map mapping[] = {
 		{'c', print_char},{'d', print_int},
