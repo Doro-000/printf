@@ -8,13 +8,8 @@
  */
 int _printf(const char *format, ...)
 {
-	char tag, *check, temp;
-	int count = 0, i = 0, flag = 0;
+	int count = 0, flag = 0;
 	void (*f)(va_list args, int *count);
-	map mapping[] = {
-		{'c', print_char},{'d', print_int},
-		{'i', print_int},{'s', print_str}
-	}
 	va_list args;
 
 	va_start(args, format);
