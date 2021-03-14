@@ -25,22 +25,22 @@ int _numlen(int num)
  *
  * Return: pointer to helper function
  */
-void (*looper(char format, int *flag))(va_list, int *)
+void (*looper(char format))(va_list, int *)
 {
 	map mapping[] = {
 		{'c', print_char},{'d', print_int},
 		{'i', print_int},{'s', print_str}
 	};
-	int i = 0;
+	int i = 0, flag = 0;
 
 	for (; i < 4; i++)
 	{
 		if (format == mapping[i].conversion_specifier)
 		{
-			*flag = 1;
+			flag = 1;
 			return (mapping[i].function);
 		}
 	}
-	if (!*(flag))
+	if (!(flag))
 		return (NULL);
 }
