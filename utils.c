@@ -1,18 +1,42 @@
 #include "holberton.h"
 
 /**
- * print - prints the given string to stdout
- * @string: string to be printed
- * @count: integer to be incremented for every char printed
+ * print_char - wrapper function for _putchar to make it compatible with the map type
+ * @args: variable arguments passed to _printf
+ * @count: int to be used by _putchar, see description for _putchar in helpers.c
  *
  * Return: void
  */
-void print(char *string, int *count)
+void print_char(va_list args, int *count)
 {
-	while(*string != '\0')
-	{
-		write(1, string, 1);
-		*count++;
-		string++;
-	}
+	_putchar(va_arg(args, int), count);
+}
+
+/**
+ * print_str - wrapper function for print to make it compatible with the map type
+ * @args: variable arguments passed to _printf
+ * @count: int to be used by print, see description for print in helpers.c
+ *
+ * Return: void
+ */
+void print_str(va_list args, int *count)
+{
+	print(va_arg(args, char *), count);
+}
+
+/**
+ * print_int - prints an integer to stdout;
+ * @args: variable arguments passed to _printf
+ * @count: int to be used by print, see description for print in helpers.c
+ *
+ * Return: void
+ */
+void print_int(va_list args, int *count)
+{
+	char *number_string;
+	int num = va_arg(args, int);
+
+	number_string = malloc(sizeof(char) * _numlen(num));
+	if (malloc != NULL)
+		print(_itoa(num, number_string), count);
 }
