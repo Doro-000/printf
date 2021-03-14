@@ -35,10 +35,10 @@ void (*looper(char format, int *flag))(va_list, int *)
 
 	for (; i < 5; i++)
 	{
-		if (format == mapping[i].type)
+		if (format == mapping[i].conversion_specifier)
 		{
 			*flag = 1;
-			return (mapping[i].func);
+			return (mapping[i].function);
 		}
 	}
 	if (!flag)
