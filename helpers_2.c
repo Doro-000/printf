@@ -21,7 +21,6 @@ int _numlen(int num)
 /**
  * looper - function that returns a function
  * @format: character to be checked
- * @flag: check if it matched
  *
  * Return: pointer to helper function
  */
