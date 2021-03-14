@@ -1,4 +1,4 @@
-#include "holberton.h"
+B#include "holberton.h"
 
 /**
  * _numlen - counts the number of digits in a number
@@ -27,8 +27,8 @@ int _numlen(int num)
 void (*looper(char format))(va_list, int *)
 {
 	map mapping[] = {
-		{'c', print_char},{'d', print_int},
-		{'i', print_int},{'s', print_str}
+		{'c', print_char}, {'d', print_int},
+		{'i', print_int}, {'s', print_str}
 	};
 	int i = 0, flag = 0;
 
