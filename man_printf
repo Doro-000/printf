@@ -1,1 +1,66 @@
-#
+.TH man 2 "15 March 2021" "0.32" "Printf man page"
+.SH NAME
+.B printf
+- Print ARGUMENT(s) according to FORMAT, or execute according to OPTION.
+.SH SYNOPSIS
+printf FORMAT [ARGUMENT]...
+printf OPTION
+.SH DESCRIPTION
+Print ARGUMENT(s) according to FORMAT, or execute according to OPTION:
+
+--help
+display this help and exit
+--version
+output version information and exit
+FORMAT controls the output as in C printf. Interpreted sequences are:
+
+\"
+double quote
+\\
+backslash
+\a
+alert (BEL)
+\b
+backspace
+\c
+produce no further output
+\e
+escape
+\f
+form feed
+\n
+new line
+\r
+carriage return
+\t
+horizontal tab
+\v
+vertical tab
+\NNN
+byte with octal value NNN (1 to 3 digits)
+\xHH
+byte with hexadecimal value HH (1 to 2 digits)
+\uHHHH
+Unicode (ISO/IEC 10646) character with hex value HHHH (4 digits)
+\UHHHHHHHH
+Unicode character with hex value HHHHHHHH (8 digits)
+%%
+a single %
+%b
+ARGUMENT as a string with '\' escapes interpreted, except that octal escapes are of the form \0 or \0NNN
+and all C format specifications ending with one of diouxXfeEgGcs, with ARGUMENTs converted to proper type first. Variable widths are handled.
+
+NOTE: your shell may have its own version of printf, which usually supersedes the version described here. Please refer to your shell's documentation for details about the options it supports.
+.SH OPTIONS
+.B eniac
+does not take any options.
+.SH SEE ALSO
+printf(3)
+The full documentation for printf is maintained as a Texinfo manual. If the info and printf programs are properly installed at your site, the command
+
+info coreutils aqprintf invocationaq
+should give you access to the complete manual.
+.SH BUGS
+No known bugs. Yet ;)
+.SH AUTHOR
+Hizkyas Aberra and Philimon Derib.
