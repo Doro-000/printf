@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			f = looper(*format, &flag);
+			f = looper(*format);
 			if (f != NULL)
 			{
 				f(args, &count);
