@@ -3,6 +3,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 /**
  * struct map_t - a struct to map format specifier with functions
@@ -34,5 +35,6 @@ void _putchar(char, int *);
 
 /*helpers_2.c*/
 int _numlen(int num);
+void (*looper(char format, int *flag))(va_list, int *);
 
 #endif /*HOLBERTON_H*/
