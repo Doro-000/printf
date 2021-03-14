@@ -50,8 +50,8 @@ char *_itoa(int num, char *string)
 
 	if (num == 0)
 	{
-		string[i] = '0';
-		string[i++] = '\0';
+		string[i++] = '0';
+		string[i] = '\0';
 		return (string);
 	}
 	if (num < 0)
@@ -101,5 +101,5 @@ void print(char *string, int *count)
 void _putchar(char c, int *count)
 {
 	write(1, &c, 1);
-	*count++;
+	(*count) += 1;
 }
