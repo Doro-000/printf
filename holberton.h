@@ -35,6 +35,6 @@ void _putchar(char, int *);
 
 /*helpers_2.c*/
 int _numlen(int num);
-void (*looper(char format, int *flag))(va_list, int *);
+void (*looper(char format))(va_list, int *);
 
 #endif /*HOLBERTON_H*/
