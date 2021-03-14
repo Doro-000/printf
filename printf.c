@@ -21,7 +21,13 @@ int _printf(const char *format, ...)
 			if (!flag & *format != '%')
 			{
 				f = looper(*format, &flag);
-				return (f(args, &count));
+				if (f != NULL)
+					f(args, &count);
+				else
+				{
+					_putchar(*format, &count);
+					format++;
+				}
 			else
 			{
 				_putchar(*format, &count);
