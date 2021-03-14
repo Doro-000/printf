@@ -74,3 +74,32 @@ char *_itoa(int num, char *string)
 	reverse_string(string, _strlen(string));
 	return (string);
 }
+
+/**
+ * print - prints the given string to stdout
+ * @string: string to be printed
+ * @count: integer to be incremented for every char printed
+ *
+ * Return: void
+ */
+void print(char *string, int *count)
+{
+	while(*string != '\0')
+	{
+		_putchar(*string, count);
+		string++;
+	}
+}
+
+/**
+ * _putchar -  prints a char to stdout
+ * @c: char to be printed
+ * @count: int to be incremented for the char printed
+ *
+ * Return: void
+ */
+void _putchar(char c, int *count)
+{
+	write(1, &c, 1);
+	*count++;
+}
