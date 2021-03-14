@@ -24,7 +24,7 @@ int _numlen(int num)
  *
  * Return: pointer to helper function
  */
-void (*looper(char *format, int *flag))(va_list, int *)
+void (*looper(char format, int *flag))(va_list, int *)
 {
 	map mapping[] = {
 		{'c', print_char},{'d', print_int},
@@ -34,7 +34,7 @@ void (*looper(char *format, int *flag))(va_list, int *)
 
 	for (; i < 5; i++)
 	{
-		if (*format == mapping[i].type)
+		if (format == mapping[i].type)
 		{
 			return (mapping[i].func);
 			flag = 1;
