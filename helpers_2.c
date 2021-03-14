@@ -22,7 +22,7 @@ int _numlen(int num)
  * looper - function that returns a function
  * @format: character to be checked
  *
- * Return: pointer to helper function
+ * Return: void
  */
 void (*looper(char format))(va_list, int *)
 {
