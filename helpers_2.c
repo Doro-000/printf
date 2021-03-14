@@ -19,8 +19,9 @@ int _numlen(int num)
 }
 
 /**
- * _numlen - counts the number of digits in a number
- * @num: number to be counted
+ * looper - function that returns a function
+ * @format: character to be checked
+ * @flag: check if it matched
  *
  * Return: pointer to helper function
  */
@@ -37,7 +38,7 @@ void (*looper(char format, int *flag))(va_list, int *)
 		if (format == mapping[i].type)
 		{
 			return (mapping[i].func);
-			*flag = 1;
+			*flag = 0;
 		}
 	}
 }
