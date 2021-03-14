@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (!flag & *format != '%')
 			{
-				f = looper(format, &count, args, flag);
+				f = looper(*format, &flag);
 				return (f(args, &count));
 			else
 			{
