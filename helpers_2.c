@@ -30,7 +30,7 @@ void (*looper(char format, int *flag))(va_list, int *)
 	map mapping[] = {
 		{'c', print_char},{'d', print_int},
 		{'i', print_int},{'s', print_str}
-	}
+	};
 	int i = 0;
 
 	for (; i < 5; i++)
