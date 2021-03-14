@@ -5,7 +5,8 @@
 #include <stdlib.h>
 
 /**
- * map - a struct to map format specifier with functions
+ * struct map_t - a struct to map format specifier with functions
+ *
  * @conversion_specifier: a char to represent a conversion specifier
  * @function: address of corresponding function
  */
