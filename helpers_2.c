@@ -33,7 +33,7 @@ void (*looper(char format, int *flag))(va_list, int *)
 	};
 	int i = 0;
 
-	for (; i < 5; i++)
+	for (; i < 4; i++)
 	{
 		if (format == mapping[i].conversion_specifier)
 		{
