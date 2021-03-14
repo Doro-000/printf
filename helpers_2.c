@@ -38,7 +38,8 @@ void (*looper(char format, int *flag))(va_list, int *)
 		if (format == mapping[i].type)
 		{
 			return (mapping[i].func);
-			*flag = 0;
+			*flag = 1;
 		}
+		
 	}
 }
