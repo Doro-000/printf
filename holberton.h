@@ -10,7 +10,7 @@
  * @conversion_specifier: a char to represent a conversion specifier
  * @function: address of corresponding function
  */
-typedef sruct map_t
+typedef struct map_t
 {
 	char *conversion_specifier;
 	void (*function)(va_list arguments, int *count);

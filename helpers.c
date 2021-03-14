@@ -84,7 +84,7 @@ char *_itoa(int num, char *string)
  */
 void print(char *string, int *count)
 {
-	while(*string != '\0')
+	while (*string != '\0')
 	{
 		_putchar(*string, count);
 		string++;

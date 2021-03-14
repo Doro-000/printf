@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * print_char - wrapper function for _putchar to make it compatible with the map type
+ * print_char - wrapper for _putchar to make it compatible with map type
  * @args: variable arguments passed to _printf
- * @count: int to be used by _putchar, see description for _putchar in helpers.c
+ * @count: int to be used by _putchar, see _putchar in helpers.c
  *
  * Return: void
  */
@@ -13,7 +13,7 @@ void print_char(va_list args, int *count)
 }
 
 /**
- * print_str - wrapper function for print to make it compatible with the map type
+ * print_str - wrapper function for print to make it compatible with map type
  * @args: variable arguments passed to _printf
  * @count: int to be used by print, see description for print in helpers.c
  *
