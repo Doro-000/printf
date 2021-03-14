@@ -24,23 +24,20 @@ int _numlen(int num)
  *
  * Return: pointer to helper function
  */
-int (*looper(const char *format, int *c, va_list args, flag))(va_list, int)
+void (*looper(const char *format, int *c, va_list args, flag))(va_list, int)
 {
 	map mapping[] = {
 		{'c', print_char},{'d', print_int},
 		{'i', print_int},{'s', print_str}
 	}
 	int i = 0;
-	void (*f)(va_list args, int *c);
 
 	for (; i < 5; i++)
 	{
 		if (*format == mapping[i].type)
 		{
-			f = mapping[i].func;
-			f(args, c);
+			return (mapping[i].func);
 			flag = 1;
 		}
 	}
-	return (f);
 }
