@@ -37,6 +37,5 @@ void print_int(va_list args, int *count)
 	int num = va_arg(args, int);
 
 	number_string = malloc(sizeof(char) * _numlen(num));
-	if (malloc != NULL)
-		print(_itoa(num, number_string), count);
+	print(_itoa(num, number_string), count);
 }
