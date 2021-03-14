@@ -50,8 +50,8 @@ char *_itoa(int num, char *string)
 
 	if (num == 0)
 	{
-		string[i] = '0';
-		string[i++] = '\0';
+		string[i++] = '0';
+		string[i] = '\0';
 		return (string);
 	}
 	if (num < 0)
