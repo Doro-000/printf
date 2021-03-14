@@ -23,19 +23,14 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			for (; i < 5; i++)
-			{
-				if (*format == mapping[i].type)
-				{
-					f = mappping[i].func;
-					f(args, &count);
-					flag = 1;
-					break;
-				}
-			}
 			if (!flag)
 			{
-				
+				f = looper(format, &count, args, flag);
+				return (f(args, &count));
+			else
+			{
+				_putchar(*format, &count);
+				format++;
 			}
 		}
 		else
