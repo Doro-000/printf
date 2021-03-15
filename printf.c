@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				format++;
 			}
 		}
-		else
+		else if (*(format + 1) != '\0')
 		{
 			_putchar(*format, &count);
 			format++;
