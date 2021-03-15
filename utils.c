@@ -38,5 +38,43 @@ void print_int(va_list args, int *count)
 
 	number_string = malloc(sizeof(char) * (_numlen(num) + 1));
 	if (number_string != NULL)
-		print(_itoa(num, number_string), count);
+	{
+		_itoa(num, number_string, 10);
+		print(number_string, count);
+	}
+}
+
+void print_hex_x(va_list args, int *count)
+{
+	char *hex_string;
+	int num = va_arg(args, int);
+	int i = 0;
+
+	hex_string = malloc(sizeof(char) * (hexlen(num) + 1));
+	if (hex_string != NULL)
+	{
+		_itoa(num, hex_string, 16);
+	}
+	print(hex_string, count);
+}
+
+void print_hex_X(va_list args, int *count)
+{
+	char *hex_string;
+	int num = va_arg(args, int);
+	int i = 0;
+
+	hex_string = malloc(sizeof(char) * (hexlen(num) + 1));
+	if (hex_string != NULL)
+	{
+		_itoa(num, hex_string, 16);
+		for (; i < hexlen(num); i++)
+		{
+			if (hex_string[i] >= '97' && hex_string[i] <= '122')
+			{
+				hex_string[i] -= 32;
+			}
+		}
+	}
+	print(hex_string, count);
 }
