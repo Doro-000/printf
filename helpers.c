@@ -38,15 +38,16 @@ int _strlen(char *string)
 }
 
 /**
- * _itoa - converts a number to a string
+ * _itoa - converts a number to the specified base
  * @num: number to be converted
  * @string: char buffer to store the string in
+ * @base: base to be converted to
  *
  * Return: pointer to the final string
  */
-char *_itoa(int num, char *string)
+void _itoa(int num, char *string, int base)
 {
-	int i = 0, is_negative = 0;
+	int i = 0, is_negative = 0, remainder;
 
 	if (num == 0)
 	{
@@ -54,15 +55,16 @@ char *_itoa(int num, char *string)
 		string[i] = '\0';
 		return (string);
 	}
-	if (num < 0)
+	if ((num < 0) && (base == 10 || base == 2))
 	{
 		is_negative = 1;
 		num *= -1;
 	}
 	while (num)
 	{
-		string[i] = (num % 10) + '0';
-		num /= 10;
+		remainder = num % base;
+		string[i] = (remainder  > 9)?((remainder - 10) + 'a'):(remainder + '0');
+		num /= base;
 		i++;
 	}
 	if (is_negative)
@@ -72,7 +74,6 @@ char *_itoa(int num, char *string)
 	}
 	string[i] = '\0';
 	reverse_string(string, _strlen(string));
-	return (string);
 }
 
 /**

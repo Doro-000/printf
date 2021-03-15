@@ -3,17 +3,36 @@
 /**
  * _numlen - counts the number of digits in a number
  * @num: number to be counted
+ * @base: base of the number
  *
  * Return: length of the number
  */
-int _numlen(int num)
+int _numlen(int num, int base)
 {
 	int len = 0;
 
 	while (num)
 	{
-		num /= 10;
-		len++;
+		if (base == 10)
+		{
+			num /= 10;
+			len++;
+		}
+		else if (base == 2)
+		{
+			num >>= 1;
+			len++;
+		}
+		else if (base == 8)
+		{
+			num /= 8;
+			len++;
+		}
+		else if (base == 16)
+		{
+			num /= 16;
+			len++;
+		}
 	}
 	return (len);
 }
