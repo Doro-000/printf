@@ -36,12 +36,12 @@ void print_octal(va_list args, int *count);
 /*helpers.c*/
 void reverse_string(char *string, int length);
 int _strlen(char *string);
-char *_itoa(int num, char *string);
+void _itoa(int num, char *string, int base);
 void print(char *, int *);
 void _putchar(char, int *);
 
 /*helpers_2.c*/
-int _numlen(int num);
+int _numlen(int num, int base);
 void (*looper(char format))(va_list, int *);
 
 #endif /*HOLBERTON_H*/
