@@ -53,7 +53,7 @@ void (*looper(char format))(va_list, int *)
 		{'o', print_octal}
 	};
 	int i = 0;
-	void (*f)()va_list, int*);
+	void (*f)(va_list, int*);
 	f = NULL;
 
 	for (; i < 8; i++)
