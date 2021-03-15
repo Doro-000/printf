@@ -36,12 +36,13 @@ void print_int(va_list args, int *count)
 	char *number_string;
 	int num = va_arg(args, int);
 
-	number_string = malloc(sizeof(char) * (_numlen(num) + 1));
+	number_string = malloc(sizeof(char) * (_numlen(num, 10) + 1));
 	if (number_string != NULL)
 	{
 		_itoa(num, number_string, 10);
-		print(number_string, count);
 	}
+	print(number_string, count);
+	free(number_string);
 }
 
 /**
@@ -57,12 +58,13 @@ void print_hex_x(va_list args, int *count)
 	int num = va_arg(args, int);
 	int i = 0;
 
-	hex_string = malloc(sizeof(char) * (_numlen(num) + 1));
+	hex_string = malloc(sizeof(char) * (_numlen(num, 16) + 1));
 	if (hex_string != NULL)
 	{
 		_itoa(num, hex_string, 16);
 	}
 	print(hex_string, count);
+	free(hex_string);
 }
 
 /**
@@ -78,7 +80,7 @@ void print_hex_X(va_list args, int *count)
 	int num = va_arg(args, int);
 	int i = 0;
 
-	hex_string = malloc(sizeof(char) * (_numlen(num) + 1));
+	hex_string = malloc(sizeof(char) * (_numlen(num, 16) + 1));
 	if (hex_string != NULL)
 	{
 		_itoa(num, hex_string, 16);
@@ -91,4 +93,26 @@ void print_hex_X(va_list args, int *count)
 		}
 	}
 	print(hex_string, count);
+	free(hex_string);
+}
+
+/**
+ * print_octal - prints an octal to stdout;
+ * @args: variable arguments passed to _printf
+ * @count: int to be used by print, see description for print in helpers.c
+ *
+ * Return: void
+ */
+void print_octal(va_list args, int *count)
+{
+	char *octal_string;
+	int num = va_arg(args, int);
+
+	octal_string = malloc(sizeof(char) * (_numlen(num, 8) + 1));
+	if (octal_string != NULL)
+	{
+		_itoa(num, octal_string, 8);
+	}
+	print(octal_string, count);
+	free(octal_string);
 }
