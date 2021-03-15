@@ -84,7 +84,7 @@ void print_hex_X(va_list args, int *count)
 	if (hex_string != NULL)
 	{
 		_itoa(num, hex_string, 16);
-		for (; i < _numlen(num); i++)
+		for (; hex_string[i] != '\0' ; i++)
 		{
 			if (hex_string[i] >= 97 && hex_string[i] <= 122)
 			{
