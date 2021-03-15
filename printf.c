@@ -8,40 +8,40 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0;
+	int count = 0, i;
 	void (*f)(va_list args, int *count);
 	va_list args;
 
 	va_start(args, format);
 	if ((format == NULL) || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
-	while ((*format) != '\0')
+	for (i = 0; (*format) && (format[i]);)
 	{
-		if ((*format) == '%')
+		if (*(format + i) == '%')
 		{
-			format++;
-			f = looper(*format);
+			i++;
+			f = looper(*(format + i));
 			if (f != NULL)
 			{
 				f(args, &count);
-				format++;
+				i++;
 			}
 			else if (*format == '%')
 			{
-				_putchar(*format, &count);
-				format++;
+				_putchar(*(format + i), &count);
+				i++;
 			}
 			else
 			{
 				_putchar('%', &count);
-				_putchar(*format, &count);
-				format++;
+				_putchar(*(format + i), &count);
+				i++;
 			}
 		}
 		else
 		{
-			_putchar(*format, &count);
-			format++;
+			_putchar(*(format + i), &count);
+			i++;
 		}
 	}
 	va_end(args);
