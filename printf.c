@@ -17,28 +17,25 @@ int _printf(const char *format, ...)
 		return (-1);
 	while ((*format) != '\0')
 	{
-		if ((*format) == '%')
+		if (((*format) == '%') && (*(format + 1) != '\0'))
 		{
-			if (*(format + 1) != '\0')
+			format++;
+			f = looper(*format);
+			if (f != NULL)
 			{
+				f(args, &count);
 				format++;
-				f = looper(*format);
-				if (f != NULL)
-				{
-					f(args, &count);
-					format++;
-				}
-				else if (*format == '%')
-				{
-					_putchar(*format, &count);
-					format++;
-				}
-				else
-				{
-					_putchar('%', &count);
-					_putchar(*format, &count);
-					format++;
-				}
+			}
+			else if (*format == '%')
+			{
+				_putchar(*format, &count);
+				format++;
+			}
+			else
+			{
+				_putchar('%', &count);
+				_putchar(*format, &count);
+				format++;
 			}
 		}
 		else
