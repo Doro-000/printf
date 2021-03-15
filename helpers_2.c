@@ -28,11 +28,13 @@ void (*looper(char format))(va_list, int *)
 {
 	map mapping[] = {
 		{'c', print_char}, {'d', print_int},
-		{'i', print_int}, {'s', print_str}
+		{'i', print_int}, {'s', print_str},
+		{'x', print_hex_x}, {'X', print_hex_X},
+		{'S', print_S}, {'b', print_bin}
 	};
 	int i = 0, flag = 0;
 
-	for (; i < 4; i++)
+	for (; i < 7; i++)
 	{
 		if (format == mapping[i].conversion_specifier)
 		{
