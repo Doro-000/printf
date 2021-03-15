@@ -62,8 +62,7 @@ void print_S(va_list args, int *count)
 			_putchar(string[i], count);
 		else
 		{
-			hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
-			_itoa(string[i], hex, 16);
+			hex = malloc(sizeof(char) * (_numlen(string[i], 16) + 1));
 			print("/x", count);
 			print_hex_X(args, count);
 			free(hex);
