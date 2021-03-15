@@ -62,6 +62,6 @@ void (*looper(char format))(va_list, int *)
 			return (mapping[i].function);
 		}
 	}
-	if (!(flag))
+	if (!flag)
 		return (NULL);
 }
