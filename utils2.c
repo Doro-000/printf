@@ -52,7 +52,7 @@ void print_octal(va_list args, int *count)
 void print_S(va_list args, int *count)
 {
 	char *string;
-	char *hex_string;
+	char *hex;
 	int i = 0;
 
 	string = va_arg(args, char *);
@@ -62,21 +62,10 @@ void print_S(va_list args, int *count)
 			_putchar(string[i], count);
 		else
 		{
-			hex_string = malloc(sizeof(char) * (_numlen(string[i], 16) + 1));
+			hex = malloc(sizeof(char) * (_numlen(string[i], 16) + 1));
 			print("/x", count);
-			if (hex_string != NULL)
-			{
-				_itoa(string[i], hex_string, 16);
-				for (i = 0; hex_string[i] != '\0' ; i++)
-				{
-					if (hex_string[i] >= 97 && hex_string[i] <= 122)
-					{
-						hex_string[i] -= 32;
-					}
-				}
-			}
-			print(hex_string, count);
-			free(hex_string);
+			print_hex_X(args, count);
+			free(hex);
 		}
 	}
 }
