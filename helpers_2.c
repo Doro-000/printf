@@ -1,4 +1,4 @@
-B#include "holberton.h"
+#include "holberton.h"
 
 /**
  * _numlen - counts the number of digits in a number
@@ -30,11 +30,12 @@ void (*looper(char format))(va_list, int *)
 		{'c', print_char}, {'d', print_int},
 		{'i', print_int}, {'s', print_str},
 		{'x', print_hex_x}, {'X', print_hex_X},
-		{'S', print_S}, {'b', print_bin}
+		{'S', print_S}, {'b', print_bin},
+		{'o', print_octal}
 	};
 	int i = 0, flag = 0;
 
-	for (; i < 7; i++)
+	for (; i < 8; i++)
 	{
 		if (format == mapping[i].conversion_specifier)
 		{
@@ -44,4 +45,5 @@ void (*looper(char format))(va_list, int *)
 	}
 	if (!(flag))
 		return (NULL);
+	
 }
