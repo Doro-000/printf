@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * _printf - printf test function
- * @format: format
+ * _printf - duplicate of printf function
+ * @format: string containing characters and format specifiers
  *
- * Return: character count
+ * Return: count of printed characters
  */
 int _printf(const char *format, ...)
 {
