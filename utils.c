@@ -78,13 +78,13 @@ void print_hex_X(va_list args, int *count)
 {
 	char *hex_string;
 	int num = va_arg(args, int);
-	int i = 0;
+	int i;
 
 	hex_string = malloc(sizeof(char) * (_numlen(num, 16) + 1));
 	if (hex_string != NULL)
 	{
 		_itoa(num, hex_string, 16);
-		for (; hex_string[i] != '\0' ; i++)
+		for (i = 0; hex_string[i] != '\0' ; i++)
 		{
 			if (hex_string[i] >= 97 && hex_string[i] <= 122)
 			{
