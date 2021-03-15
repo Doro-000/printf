@@ -41,7 +41,7 @@ void print(char *, int *);
 void _putchar(char, int *);
 
 /*helpers_2.c*/
-int _numlen(int num);
+int _numlen(int num, int base);
 void (*looper(char format))(va_list, int *);
 
 #endif /*HOLBERTON_H*/
