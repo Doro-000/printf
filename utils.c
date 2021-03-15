@@ -95,24 +95,3 @@ void print_hex_X(va_list args, int *count)
 	print(hex_string, count);
 	free(hex_string);
 }
-
-/**
- * print_octal - prints an octal to stdout;
- * @args: variable arguments passed to _printf
- * @count: int to be used by print, see description for print in helpers.c
- *
- * Return: void
- */
-void print_octal(va_list args, int *count)
-{
-	char *octal_string;
-	int num = va_arg(args, int);
-
-	octal_string = malloc(sizeof(char) * (_numlen(num, 8) + 1));
-	if (octal_string != NULL)
-	{
-		_itoa(num, octal_string, 8);
-	}
-	print(octal_string, count);
-	free(octal_string);
-}
