@@ -19,6 +19,7 @@ void print_bin(va_list args, int *count)
 		_itoa(num, bin_string);
 	}
 	print(bin_string, count);
+	free(bin_string);
 }
 /**
  * print_S - prints the string to stdout;
@@ -32,9 +33,9 @@ void print_S(va_list args, int *count)
 	char *string;
 	int i = 0;
 
-// 	for (; i < 
-// 	{
-// 		_itoa(num, bin_string);
-// 	}
+	for (; i < 
+	{
+		_itoa(num, bin_string);
+	}
 	print(bin_string, count);
 }
