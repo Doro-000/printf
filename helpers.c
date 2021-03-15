@@ -38,9 +38,10 @@ int _strlen(char *string)
 }
 
 /**
- * _itoa - converts a number to a string
+ * _itoa - converts a number to the specified base
  * @num: number to be converted
  * @string: char buffer to store the string in
+ * @base: base to be converted to
  *
  * Return: pointer to the final string
  */
