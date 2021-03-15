@@ -38,13 +38,12 @@ int _printf(const char *format, ...)
 				format++;
 			}
 		}
-		else if (*(format + 1) != '\0')
+		else
 		{
-			_putchar(*format, &count);
+			if (*(format + 1) != '\0')
+				_putchar(*format, &count);
 			format++;
 		}
-		else
-			format++;
 	}
 	va_end(args);
 	return (count);
