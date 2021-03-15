@@ -1,10 +1,11 @@
 .TH man 2 "15 March 2021" "0.32" "Printf man page"
 .SH NAME
 .B printf
-- Print ARGUMENT(s) according to FORMAT, or execute according to OPTION.
+- Print the given string of character based on the given specifier.
 .SH SYNOPSIS
 printf FORMAT [ARGUMENT]...
 printf OPTION
+none.
 .SH DESCRIPTION
 FORMAT controls the output as in C printf. Interpreted sequences are:
 
