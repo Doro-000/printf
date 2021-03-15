@@ -56,7 +56,6 @@ void print_hex_x(va_list args, int *count)
 {
 	char *hex_string;
 	int num = va_arg(args, int);
-	int i = 0;
 
 	hex_string = malloc(sizeof(char) * (_numlen(num, 16) + 1));
 	if (hex_string != NULL)
