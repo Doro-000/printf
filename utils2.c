@@ -64,14 +64,8 @@ void print_S(va_list args, int *count)
 		{
 			hex = malloc(sizeof(char) * (_numlen(string[i], 16) + 1));
 			_itoa(string[i], hex, 16);
-			for (i = 0; hex[i] != '\0' ; i++)
-			{
-				if (hex[i] >= 97 && hex[i] <= 122)
-				{
-					hex[i] -= 32;
-				}
-			}
 			print("/x", count);
+			_putchar('0', count);
 			print(hex, count);
 			free(hex);
 		}
