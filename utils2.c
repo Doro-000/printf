@@ -31,7 +31,7 @@ void print_bin(va_list args, int *count)
 void print_octal(va_list args, int *count)
 {
 	char *octal_string;
-	int num = va_arg(args, int);
+	unsigned int num = va_arg(args, int);
 
 	octal_string = malloc(sizeof(char) * (_numlen(num, 8) + 1));
 	if (octal_string != NULL)
