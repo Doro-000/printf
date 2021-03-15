@@ -31,14 +31,6 @@ carriage return
 horizontal tab
 \v
 vertical tab
-\NNN
-byte with octal value NNN (1 to 3 digits)
-\xHH
-byte with hexadecimal value HH (1 to 2 digits)
-\uHHHH
-Unicode (ISO/IEC 10646) character with hex value HHHH (4 digits)
-\UHHHHHHHH
-Unicode character with hex value HHHHHHHH (8 digits)
 %%
 a single %
 .SH BUGS
