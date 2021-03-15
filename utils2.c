@@ -31,7 +31,7 @@ void print_bin(va_list args, int *count)
 void print_octal(va_list args, int *count)
 {
 	char *octal_string;
-	int num = va_arg(args, int);
+	unsigned int num = va_arg(args, int);
 
 	octal_string = malloc(sizeof(char) * (_numlen(num, 8) + 1));
 	if (octal_string != NULL)
@@ -52,7 +52,7 @@ void print_octal(va_list args, int *count)
 void print_S(va_list args, int *count)
 {
 	char *string;
-	char *hex;
+	char *hex_string;
 	int i = 0;
 
 	string = va_arg(args, char *);
@@ -64,7 +64,18 @@ void print_S(va_list args, int *count)
 		{
 			hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
 			print("/x", count);
-			print_hex_X(args, count);
+			if (hex != NULL)
+			{
+				_itoa(string[i], hex, 16);
+				for (i = 0; hex[i] != '\0' ; i++)
+				{
+					if (hex[i] >= 97 && hex[i] <= 122)
+					{
+						hex[i] -= 32;
+					}
+				}
+			}
+			print(hex, count);
 			free(hex);
 		}
 	}
