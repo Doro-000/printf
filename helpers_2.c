@@ -23,6 +23,16 @@ int _numlen(int num, int base)
 			num >>= 1;
 			len++;
 		}
+		else if (base == 8)
+		{
+			num /= 8;
+			len++;
+		}
+		else if (base == 16)
+		{
+			num /= 16;
+			len++;
+		}
 	}
 	return (len);
 }
