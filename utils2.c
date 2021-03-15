@@ -64,6 +64,14 @@ void print_S(va_list args, int *count)
 		{
 			hex = malloc(sizeof(char) * (_numlen(string[i], 16) + 1));
 			_itoa(string[i], hex, 16);
+			for (i = 0; hex[i] != '\0' ; i++)
+			{
+				if (hex[i] >= 97 && hex[i] <= 122)
+				{
+					hex[i] -= 32;
+				}
+			}
+			print("/x", count);
 			print(hex, count);
 			free(hex);
 		}
@@ -78,18 +86,18 @@ void print_S(va_list args, int *count)
  * Return: void
  */
 
-void print_unsigned(va_list args, int *count)
-{
-	char *bin_string;
-	int i, uni = va_arg(args, int);
-	unsigned int j;
+// void print_unsigned(va_list args, int *count)
+// {
+// 	char *bin_string;
+// 	int i, uni = va_arg(args, int);
+// 	unsigned int j;
 
-	j = uni;
-	for (i = 1000000000; i > 0; i /= 10)
-	{
-		if (i 
-		_itoa(num, bin_string, 2);
-	}
-	print(bin_string, count);
-	free(bin_string);
-}
+// 	j = uni;
+// 	for (i = 1000000000; i > 0; i /= 10)
+// 	{
+// 		if (i 
+// 		_itoa(num, bin_string, 2);
+// 	}
+// 	print(bin_string, count);
+// 	free(bin_string);
+// }
