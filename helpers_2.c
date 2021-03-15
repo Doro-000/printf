@@ -45,5 +45,4 @@ void (*looper(char format))(va_list, int *)
 	}
 	if (!(flag))
 		return (NULL);
-	
 }
