@@ -54,8 +54,8 @@ void (*looper(char format))(va_list, int *)
 	};
 	int i = 0;
 	void (*f)(va_list, int*);
-	f = NULL;
 
+	f = NULL;
 	for (; i < 8; i++)
 	{
 		if (format == mapping[i].conversion_specifier)
