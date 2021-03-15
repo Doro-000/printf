@@ -13,7 +13,7 @@ void print_bin(va_list args, int *count)
 	int num = va_arg(args, int);
 	int i = 0;
 
-	bin_string = malloc(sizeof(char) * (_numlen(num) + 1));
+	bin_string = malloc(sizeof(char) * (_numlen(num, 2) + 1));
 	if (bin_string != NULL)
 	{
 		_itoa(num, bin_string);
@@ -63,7 +63,7 @@ void print_S(va_list args, int *count)
 			_putchar(string[i], count);
 		else
 		{
-			hex = malloc(sizeof(char) * (_numlen(string[i]) + 1));
+			hex = malloc(sizeof(char) * (_numlen(string[i], 16) + 1));
 			_itoa(string[i], hex, 16);
 			print(hex, count);
 			free(hex);
