@@ -52,16 +52,17 @@ void (*looper(char format))(va_list, int *)
 		{'S', print_S}, {'b', print_bin},
 		{'o', print_octal}
 	};
-	int i = 0, flag = 0;
+	int i = 0;
+	void (*f)()va_list, int*);
+	f = NULL;
 
 	for (; i < 8; i++)
 	{
 		if (format == mapping[i].conversion_specifier)
 		{
-			flag = 1;
-			return (mapping[i].function);
+			f = mapping[i].function;
+			break;
 		}
 	}
-	if (!flag)
-		return (NULL);
+	return (f);
 }
