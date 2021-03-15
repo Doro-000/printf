@@ -56,7 +56,7 @@ void print_S(va_list args, int *count)
 	int i = 0;
 
 	string = va_arg(args, char *);
-	for (; string[i] != '\0'; i++) 
+	for (; string[i] != '\0'; i++)
 	{
 		if (string[i] >= 32 && string[i] <= 126)
 			_putchar(string[i], count);

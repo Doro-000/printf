@@ -62,7 +62,7 @@ void _itoa(int num, char *string, int base)
 	while (num)
 	{
 		remainder = num % base;
-		string[i] = (remainder  > 9)?((remainder - 10) + 'a'):(remainder + '0');
+		string[i] = (remainder  > 9) ? ((remainder - 10) + 'a') : (remainder + '0');
 		num /= base;
 		i++;
 	}

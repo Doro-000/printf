@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * _printf - printf test function
- * @format: format
+ * _printf - duplicate of printf function
+ * @format: string containing characters and format specifiers
  *
- * Return: character count
+ * Return: count of printed characters
  */
 int _printf(const char *format, ...)
 {
@@ -13,9 +13,11 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	while (*format)
+	if ((format == NULL) || (*format == '%' && *(format + 1) == '\0'))
+		return (-1);
+	while ((*format) != '\0')
 	{
-		if (*format == '%')
+		if (((*format) == '%') && (*(format + 1) != '\0'))
 		{
 			format++;
 			f = looper(*format);
@@ -36,11 +38,13 @@ int _printf(const char *format, ...)
 				format++;
 			}
 		}
-		else
+		else if (*format != '%')
 		{
 			_putchar(*format, &count);
 			format++;
 		}
+		else
+			format++;
 	}
 	va_end(args);
 	return (count);
