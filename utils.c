@@ -44,13 +44,20 @@ void print_int(va_list args, int *count)
 	}
 }
 
+/**
+ * print_hex_x - prints an hex to stdout;
+ * @args: variable arguments passed to _printf
+ * @count: int to be used by print, see description for print in helpers.c
+ *
+ * Return: void
+ */
 void print_hex_x(va_list args, int *count)
 {
 	char *hex_string;
 	int num = va_arg(args, int);
 	int i = 0;
 
-	hex_string = malloc(sizeof(char) * (hexlen(num) + 1));
+	hex_string = malloc(sizeof(char) * (hex_len(num) + 1));
 	if (hex_string != NULL)
 	{
 		_itoa(num, hex_string, 16);
@@ -58,13 +65,20 @@ void print_hex_x(va_list args, int *count)
 	print(hex_string, count);
 }
 
+/**
+ * print_hex - prints an integer to stdout;
+ * @args: variable arguments passed to _printf
+ * @count: int to be used by print, see description for print in helpers.c
+ *
+ * Return: void
+ */
 void print_hex_X(va_list args, int *count)
 {
 	char *hex_string;
 	int num = va_arg(args, int);
 	int i = 0;
 
-	hex_string = malloc(sizeof(char) * (hexlen(num) + 1));
+	hex_string = malloc(sizeof(char) * (hex_len(num) + 1));
 	if (hex_string != NULL)
 	{
 		_itoa(num, hex_string, 16);
