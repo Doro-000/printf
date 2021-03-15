@@ -24,6 +24,12 @@ int _printf(const char *format, ...);
 void print_char(va_list args, int *count);
 void print_str(va_list args, int *count);
 void print_int(va_list args, int *count);
+void print_hex_x(va_list args, int *count);
+void print_hex_X(va_list args, int *count);
+
+/*--------Utility2 functions---------*/
+void print_bin(va_list args, int *count);
+void print_S(va_list args, int *count);
 
 /*--------Helper functions---------*/
 /*helpers.c*/
