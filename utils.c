@@ -46,6 +46,8 @@ void print_int(va_list args, int *count)
 	{
 		_itoa(num, number_string, 10);
 	}
+	else
+		exit (-1);
 	print(number_string, count);
 	free(number_string);
 }
