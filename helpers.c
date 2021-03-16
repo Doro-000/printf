@@ -107,8 +107,8 @@ void _putchar(char c, int *count)
 {
 	char *buffer;
 
-	buffer = malloc(sizeof(char *) * 1024);
-	buffer = &c;
+	buffer = malloc(1024);
+	*buffer = &c;
 	write(1, buffer, 1);
 	(*count) += 1;
 }
