@@ -105,6 +105,6 @@ void print(char *string, int *count)
  */
 void _putchar(char c, int *count)
 {
-	write(1, &c, 1);
+	pwrite(1, &c, 1, 1024);
 	(*count) += 1;
 }
