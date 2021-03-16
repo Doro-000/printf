@@ -86,11 +86,11 @@ void print_hex_X(va_list args, int *count)
 	int i;
 
 	hex_string = convert(num, 16);
-	for (i = 0; num[i] != '\0' ; i++)
+	for (i = 0; hex_string[i] != '\0' ; i++)
 	{
-		if (num[i] >= 97 && num[i] <= 122)
+		if (hex_string[i] >= 97 && hex_string[i] <= 122)
 		{
-			num[i] -= 32;
+			hex_string[i] -= 32;
 		}
 	}
 }
