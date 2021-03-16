@@ -56,24 +56,29 @@ void print_S(va_list args, int *count)
 	int i = 0, j = 0;
 
 	string = va_arg(args, char *);
-	for (; string[i] != '\0'; i++)
+	if (string != NULL)
 	{
-		if (string[i] >= 32 && string[i] <= 126)
-			_putchar(string[i], count);
-		else
+		for (; string[i] != '\0'; i++)
 		{
-			hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
-			print("\\x0", count);
-			_itoa(string[i], hex, 16);
-			for (; hex[j] != '\0'; j++)
+			if (string[i] >= 32 && string[i] <= 126)
+				_putchar(string[i], count);
+			else
 			{
-				if (hex[j] >= 97 && hex[j] <= 122)
+				hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
+				print("\\x0", count);
+				_itoa(string[i], hex, 16);
+				for (; hex[j] != '\0'; j++)
 				{
-					hex[j] -= 32;
+					if (hex[j] >= 97 && hex[j] <= 122)
+					{
+						hex[j] -= 32;
+					}
 				}
+				print(hex, count);
+				free(hex);
 			}
-			print(hex, count);
-			free(hex);
 		}
 	}
+	else
+		print("(null)");
 }
