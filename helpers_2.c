@@ -67,3 +67,28 @@ void (*looper(char format))(va_list, int *)
 	}
 	return (f);
 }
+
+/**
+ * transform - helper function to map a letter with it's rot13 encoding
+ * @x: char to be encoded
+ *
+ * Return: the encoded char
+ */
+char transform(char x)
+{
+	char one[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char two[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i = 0;
+	char replacement = x;
+
+	while (i < 52)
+	{
+		if (x == one[i])
+		{
+			replacement = two[i];
+			break;
+		}
+		i++;
+	}
+	return (replacement);
+}
