@@ -105,9 +105,9 @@ void print(char *string, int *count)
  */
 void _putchar(char c, int *count)
 {
-	void *buffer[1024];
+	char *buffer[1024];
 
-	buffer[0] = c;
+	buffer[0] = &c;
 	write(1, buffer, 1024);
 	(*count) += 1;
 }
