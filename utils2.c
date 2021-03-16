@@ -32,11 +32,10 @@ void print_bin(va_list args, int *count)
 	bin_string = malloc(sizeof(char) * (_numlen(num, 2) + 1));
 	if (bin_string != NULL)
 	{
-		_itoa(num, bin_string, 2);
+		print(convert(num, 2), count);
 	}
 	else
 		exit(-1);
-	print(bin_string, count);
 	free(bin_string);
 }
 
@@ -59,6 +58,7 @@ void print_octal(va_list args, int *count)
 	}
 	else
 		exit(-1);
+	free(oct_string);
 }
 
 /**
