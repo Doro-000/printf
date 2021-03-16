@@ -17,6 +17,8 @@ void print_bin(va_list args, int *count)
 	{
 		_itoa(num, bin_string, 2);
 	}
+	else
+		exit(-1);
 	print(bin_string, count);
 	free(bin_string);
 }
@@ -65,7 +67,10 @@ void print_S(va_list args, int *count)
 			else
 			{
 				hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
-				print("\\x0", count);
+				if (_numlen(string[i] > 1))
+					print("\\x", count);
+				else
+					print("\\x0", count);
 				_itoa(string[i], hex, 16);
 				for (; hex[j] != '\0'; j++)
 				{
