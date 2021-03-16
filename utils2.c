@@ -85,7 +85,7 @@ void print_S(va_list args, int *count)
 					print("\\x", count);
 				else
 					print("\\x0", count);
-				convert(num, 16);
+				convert(string, 16);
 				for (; num[j] != '\0'; j++)
 				{
 					if (num[j] >= 97 && num[j] <= 122)
