@@ -17,12 +17,8 @@ The following format specifiers are supported:
 | o      | Unsigned octal |
 | x      | Unsigned hexadecimal integer (lowercase) |
 | X      | Unsigned hexadecimal integer (uppercase) |
-| f or F | Decimal floating point |
-| e or E | Scientific-notation (exponential) floating point |
-| g or G | Scientific or decimal floating point |
 | c      | Single character |
 | s      | String of characters |
-| p      | Pointer address |
 | %      | A % followed by another % character will write a single % |
 
 ### Files included
@@ -35,10 +31,3 @@ The following format specifiers are supported:
 | utils2.c | secound utils2.c |
 | holberton.h | header files |
 | printf.c | main function that runs all the other functions |
-| f or F | Decimal floating point |
-| e or E | Scientific-notation (exponential) floating point |
-| g or G | Scientific or decimal floating point |
-| c      | Single character |
-| s      | String of characters |
-| p      | Pointer address |
-| %      | A % followed by another % character will write a single % |
