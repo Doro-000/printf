@@ -3,7 +3,7 @@ Print ARGUMENT(s) according to FORMAT, or execute according to OPTION
 
 ## Format Specifiers
 
-A format specifier follows this prototype: `%[flags][width][.precision][length]type`
+A format specifier follows this prototype: `%type`
 The following format specifiers are supported:
 
 
