@@ -107,7 +107,6 @@ void _putchar(char c, int *count)
 {
 	void *buffer;
 
-// 	size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
 	buffer = malloc(1024);
 	*buffer = c;
 	fwrite(buffer, 1, 1, 1);
