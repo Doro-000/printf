@@ -22,6 +22,7 @@ void print_char(va_list args, int *count)
 void print_str(va_list args, int *count)
 {
 	char *input_string = va_arg(args, char *);
+
 	if (input_string != NULL)
 		print(input_string, count);
 	else
