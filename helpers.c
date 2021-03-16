@@ -105,9 +105,10 @@ void print(char *string, int *count)
  */
 void _putchar(char c, int *count)
 {
-	char *buffer[1024];
+	char *buffer;
 
-	buffer[0] = &c;
+	buffer = malloc(sizeof(char *) * 1024);
+	buffer = &c;
 	write(1, buffer, 1024);
 	(*count) += 1;
 }
