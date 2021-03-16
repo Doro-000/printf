@@ -34,7 +34,7 @@ void print_octal(va_list args, int *count)
 {
 	unsigned int num = va_arg(args, unsigned int);
 
-	if (num != NULL)
+	if (&num != NULL)
 	{
 		_putchar(convert(num, 8), count);
 	}
