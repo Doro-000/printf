@@ -120,12 +120,16 @@ void print_S(va_list args, int *count)
 void print_rev(va_list args, int *count)
 {
 	char *rev_string;
+	int len;
 
 	rev_string = va_arg(args, char *);
 	if (rev_string != NULL)
 	{
-		reverse_string(rev_string, _strlen(rev_string));
-		print(rev_string, count);
+		len =_strlen(rev_string);
+		while (--len >= 0)
+		{
+			_putchar(rev_string[len], count);
+		}
 	}
 	else
 		print("(null)", count);
