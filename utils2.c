@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * print_bin - prints a binary to stdout;
- * @args: variable arguments passed to _printf
- * @count: int to be used by print, see description for print in helpers.c
+ * convert - prints a binary to stdout;
+ * @num: number given
+ * @count: base whated
  *
- * Return: void
+ * Return: ptr to string
  */
 char *convert(unsigned int num, int base) 
 { 
@@ -81,21 +81,19 @@ void print_S(va_list args, int *count)
 		{
 			if ((string[i] > 0 && string[i] < 32) || (string[i] >= 127))
 			{
-				hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
 				if (_numlen(string[i], 16) == 2)
 					print("\\x", count);
 				else
 					print("\\x0", count);
-				_itoa(string[i], hex, 16);
-				for (; hex[j] != '\0'; j++)
+				convert(num, 16);
+				for (; num[j] != '\0'; j++)
 				{
-					if (hex[j] >= 97 && hex[j] <= 122)
+					if (num[j] >= 97 && num[j] <= 122)
 					{
-						hex[j] -= 32;
+						num[j] -= 32;
 					}
 				}
-				print(hex, count);
-				free(hex);
+				print(num, count);
 			}
 			else
 			{
