@@ -109,7 +109,7 @@ void print_rev(va_list args, int *count)
 	rev_string = va_arg(args, char *);
 	if (rev_string != NULL)
 	{
-		reverse_string(rev_string, _strlen(rev_string))
+		reverse_string(rev_string, _strlen(rev_string));
 		print(rev_string, count);
 	}
 	else
