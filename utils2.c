@@ -8,20 +8,20 @@
  */
 char *convert(unsigned int num, int base)
 {
-    static char Representation[]= "0123456789ABCDEF";
-    static char buffer[50];
-    char *ptr;
+	static char Representation[]= "0123456789ABCDEF";
+	static char buffer[50];
+	char *ptr;
 
-    ptr = &buffer[49];
-    *ptr = '\0';
+	ptr = &buffer[49];
+	*ptr = '\0';
 
-    do
-    {
-        *--ptr = Representation[num % base];
-        num /= base;
-    }while(num != 0);
+	do
+	{
+		*--ptr = Representation[num % base];
+		num /= base;
+	}while(num != 0);
 
-    return(ptr);
+	return(ptr);
 }
 
 void print_bin(va_list args, int *count)
@@ -116,7 +116,6 @@ void print_S(va_list args, int *count)
  *
  * Return: void
  */
-
 void print_rev(va_list args, int *count)
 {
 	char *rev_string;
@@ -125,7 +124,7 @@ void print_rev(va_list args, int *count)
 	rev_string = va_arg(args, char *);
 	if (rev_string != NULL)
 	{
-		len =_strlen(rev_string);
+		len = _strlen(rev_string);
 		while (--len >= 0)
 		{
 			_putchar(rev_string[len], count);
