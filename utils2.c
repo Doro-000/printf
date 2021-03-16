@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * convert - convert to desired base;
  * @num: given number
@@ -15,7 +16,7 @@ char *convert(unsigned int num, int base)
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do{
+	do {
 		*--ptr = Representation[num % base];
 		num /= base;
 	} while (num != 0);
@@ -23,6 +24,13 @@ char *convert(unsigned int num, int base)
 	return (ptr);
 }
 
+/**
+ * print_bin - prints a binary to stdout;
+ * @args: variable arguments passed to _printf
+ * @count: int to be used by print, see description for print in helpers.c
+ *
+ * Return: void
+ */
 void print_bin(va_list args, int *count)
 {
 	char *bin_string;
