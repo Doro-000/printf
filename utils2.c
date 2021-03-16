@@ -55,11 +55,10 @@ void print_octal(va_list args, int *count)
 	oct_string = malloc(sizeof(char) * (_numlen(num, 8) + 1));
 	if (oct_string != NULL)
 	{
-		_itoa(convert(num, 8), oct_string, 8);
+		print(convert(num, 8), count);
 	}
 	else
 		exit(-1);
-	print(oct_string, count);
 }
 
 /**
