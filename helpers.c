@@ -47,7 +47,7 @@ int _strlen(char *string)
  */
 void _itoa(int num, char *string, int base)
 {
-	int i = 0, is_negative = 0, remainder, is_intmin = 0;
+	int i = 0, is_negative = 0, remainder = 0, is_intmin = 0;
 
 	if (num == 0)
 	{
