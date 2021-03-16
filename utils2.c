@@ -67,7 +67,7 @@ void print_S(va_list args, int *count)
 			else
 			{
 				hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
-				if (_numlen(string[i] > 1))
+				if (_numlen(string[i], 16)) > 1))
 					print("\\x", count);
 				else
 					print("\\x0", count);
