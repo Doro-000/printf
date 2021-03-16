@@ -93,5 +93,4 @@ void print_hex_X(va_list args, int *count)
 			num[i] -= 32;
 		}
 	}
-	free(hex_string);
 }
