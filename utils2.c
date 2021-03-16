@@ -1,13 +1,13 @@
 #include "holberton.h"
 /**
- * print_bin - prints a binary to stdout;
- * @args: variable arguments passed to _printf
- * @count: int to be used by print, see description for print in helpers.c
+ * convert - convert to desired base;
+ * @num: given number
+ * @base: given base
  *
- * Return: void
+ * Return: ptr to character
  */
-char *convert(unsigned int num, int base) 
-{ 
+char *convert(unsigned int num, int base)
+{
     static char Representation[]= "0123456789ABCDEF";
     static char buffer[50];
     char *ptr;
@@ -16,9 +16,9 @@ char *convert(unsigned int num, int base)
     *ptr = '\0';
 
     do
-    { 
-        *--ptr = Representation[num % base]; 
-        num /= base; 
+    {
+        *--ptr = Representation[num % base];
+        num /= base;
     }while(num != 0);
 
     return(ptr);
