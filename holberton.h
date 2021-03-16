@@ -35,6 +35,9 @@ void print_octal(va_list args, int *count);
 void print_rev(va_list args, int *count);
 char *convert(unsigned int num, int base);
 
+/*--------Utility3 functions---------*/
+void print_rot13(va_list args, int *count);
+
 /*--------Helper functions---------*/
 /*helpers.c*/
 void reverse_string(char *string, int length);
@@ -46,5 +49,6 @@ void _putchar(char, int *);
 /*helpers_2.c*/
 int _numlen(int num, int base);
 void (*looper(char format))(va_list, int *);
+char transform(char x);
 
 #endif /*HOLBERTON_H*/
