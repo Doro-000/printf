@@ -113,6 +113,5 @@ void print_rev(va_list args, int *count)
 		print(rev_string, count);
 	}
 	else
-		exit(-1);
-	free(rev_string);
+		print("(null)", count);
 }
