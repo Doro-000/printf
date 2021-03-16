@@ -52,13 +52,14 @@ void print_octal(va_list args, int *count)
 	unsigned int num = va_arg(args, unsigned int);
 	char *oct_string;
 
-	oct_string = &num;
+	oct_string = malloc(sizeof(char) * (_numlen(num, 8) + 1));
 	if (oct_string != NULL)
 	{
-		_putchar(convert(num, 8), count);
+		_itoa((convert(num, 8), oct_string, 8));
 	}
 	else
 		exit(-1);
+	print(oct_string, count);
 }
 
 /**
