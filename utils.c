@@ -84,7 +84,7 @@ void print_hex_X(va_list args, int *count)
 {
 	char *hex_string;
 	int num = va_arg(args, int);
-	int i;
+	int i = 0;
 
 	hex_string = convert(num, 16);
 	if (!num)
