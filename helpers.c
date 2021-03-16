@@ -109,6 +109,6 @@ void _putchar(char c, int *count)
 
 	buffer = malloc(sizeof(char *) * 1024);
 	buffer = &c;
-	write(1, buffer, 1024);
+	write(1, buffer, 1);
 	(*count) += 1;
 }
