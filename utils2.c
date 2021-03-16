@@ -86,14 +86,14 @@ void print_S(va_list args, int *count)
 				else
 					print("\\x0", count);
 				convert(string, 16);
-				for (; num[j] != '\0'; j++)
+				for (; string[j] != '\0'; j++)
 				{
-					if (num[j] >= 97 && num[j] <= 122)
+					if (string[j] >= 97 && string[j] <= 122)
 					{
-						num[j] -= 32;
+						string[j] -= 32;
 					}
 				}
-				print(num, count);
+				print(string, count);
 			}
 			else
 			{
