@@ -62,10 +62,7 @@ void print_S(va_list args, int *count)
 	{
 		for (; string[i] != '\0'; i++)
 		{
-			if (string[i] >= 32 && string[i] <= 126)
-				_putchar(string[i], count);
-			else
-			{
+			if ((string[i] > 0 && string[i] < 32) || (string[i] >= 127)
 				hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
 				if (_numlen(string[i], 16) == 2)
 					print("\\x", count);
@@ -81,6 +78,10 @@ void print_S(va_list args, int *count)
 				}
 				print(hex, count);
 				free(hex);
+				
+			else
+			{
+				_putchar(string[i], count);
 			}
 		}
 	}
