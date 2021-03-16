@@ -10,7 +10,7 @@
 void print_bin(va_list args, int *count)
 {
 	char *bin_string;
-	int num = va_arg(args, int);
+	unsigned int num = va_arg(args, int);
 
 	bin_string = malloc(sizeof(char) * (_numlen(num, 2) + 1));
 	if (bin_string != NULL)
