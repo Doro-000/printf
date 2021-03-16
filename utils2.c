@@ -1,48 +1,27 @@
 #include "holberton.h"
 
 /**
- * convert - convert to desired base;
- * @num: given number
- * @base: given base
- *
- * Return: ptr to character
- */
-char *convert(unsigned int num, int base)
-{
-	char Representation[] = "0123456789ABCDEF";
-	char buffer[50];
-	char *ptr;
-
-	ptr = &buffer[49];
-	*ptr = '\0';
-
-	do {
-		*--ptr = Representation[num % base];
-		num /= base;
-	} while (num != 0);
-
-	return (ptr);
-}
-
-/**
  * print_bin - prints a binary to stdout;
  * @args: variable arguments passed to _printf
  * @count: int to be used by print, see description for print in helpers.c
  *
  * Return: void
  */
+
 void print_bin(va_list args, int *count)
 {
 	char *bin_string;
 	unsigned int num = va_arg(args, unsigned int);
 
-	bin_string = convert(num, 2);
-	if (!num)
+	bin_string = malloc(sizeof(char) * (_numlen(num, 2) + 1));
+	if (bin_string != NULL)
 	{
-		_putchar('0', count);
+		_itoa(num, bin_string, 2);
 	}
 	else
-		print(bin_string, count);
+		exit(-1);
+	print(bin_string, count);
+	free(bin_string);
 }
 
 /**
@@ -55,15 +34,13 @@ void print_bin(va_list args, int *count)
 void print_octal(va_list args, int *count)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	char *oct_string;
 
-	oct_string = convert(num, 8);
-	if (!num)
+	if (num != NULL)
 	{
-		_putchar('0', count);
+		_putchar(convert(num, 8), count);
 	}
 	else
-		print(oct_string, count);
+		exit(-1);
 }
 
 /**
@@ -87,23 +64,20 @@ void print_S(va_list args, int *count)
 			if ((string[i] > 0 && string[i] < 32) || (string[i] >= 127))
 			{
 				hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
-				if (hex != NULL)
+				if (_numlen(string[i], 16) == 2)
+					print("\\x", count);
+				else
+					print("\\x0", count);
+				_itoa(string[i], hex, 16);
+				for (; hex[j] != '\0'; j++)
 				{
-					if (_numlen(string[i], 16) == 2)
-						print("\\x", count);
-					else
-						print("\\x0", count);
-					_itoa(string[i], hex, 16);
-					for (; hex[j] != '\0'; j++)
+					if (hex[j] >= 97 && hex[j] <= 122)
 					{
-						if (hex[j] >= 97 && hex[j] <= 122)
 						hex[j] -= 32;
 					}
-					print(hex, count);
-					free(hex);
 				}
-				else
-					exit(-1);
+				print(hex, count);
+				free(hex);
 			}
 			else
 			{
