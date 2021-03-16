@@ -105,10 +105,11 @@ void print(char *string, int *count)
  */
 void _putchar(char c, int *count)
 {
-	char *buffer;
+	void *buffer;
 
+// 	size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
 	buffer = malloc(1024);
 	*buffer = c;
-	write(1, buffer, 1);
+	fwrite(buffer, 1, 1, 1);
 	(*count) += 1;
 }
