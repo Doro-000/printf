@@ -64,12 +64,13 @@ void print_hex_x(va_list args, int *count)
 	char *hex_string;
 	int num = va_arg(args, int);
 
-	hex_string = malloc(sizeof(char) * (_numlen(num, 16) + 1));
-	if (hex_string != NULL)
+	hex_string = convert(num, 16);
+	if (!num)
 	{
-		print(convert(num, 16), count);
+		_putchar('0', count);
 	}
-	free(hex_string);
+	else
+		print(hex_string, count);
 }
 
 /**
@@ -86,8 +87,11 @@ void print_hex_X(va_list args, int *count)
 	int i;
 
 	hex_string = convert(num, 16);
-	for (i = 0; hex_string[i] != '\0' ; i++)
+	if (!num)
 	{
+		_putchar('0', count);
+	}
+	else
 		if (hex_string[i] >= 97 && hex_string[i] <= 122)
 		{
 			hex_string[i] -= 32;
