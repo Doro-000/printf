@@ -17,6 +17,8 @@ void print_bin(va_list args, int *count)
 	{
 		_itoa(num, bin_string, 2);
 	}
+	else
+		exit(-1);
 	print(bin_string, count);
 	free(bin_string);
 }
