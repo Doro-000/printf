@@ -97,7 +97,7 @@ void print_S(va_list args, int *count)
 					for (; hex[j] != '\0'; j++)
 					{
 						if (hex[j] >= 97 && hex[j] <= 122)
-							hex[j] -= 32;
+						hex[j] -= 32;
 					}
 					print(hex, count);
 					free(hex);
