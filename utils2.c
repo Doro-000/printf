@@ -80,5 +80,5 @@ void print_S(va_list args, int *count)
 		}
 	}
 	else
-		print("(null)");
+		print("(null)", count);
 }
