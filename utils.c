@@ -92,6 +92,7 @@ void print_hex_X(va_list args, int *count)
 		_putchar('0', count);
 	}
 	else
+	{
 		if (hex_string[i] >= 97 && hex_string[i] <= 122)
 		{
 			hex_string[i] -= 32;
