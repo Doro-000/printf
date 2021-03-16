@@ -32,18 +32,14 @@ void print_bin(va_list args, int *count)
  */
 void print_octal(va_list args, int *count)
 {
-	char *octal_string;
 	unsigned int num = va_arg(args, unsigned int);
 
-	octal_string = malloc(sizeof(char) * (_numlen(num, 8) + 1));
-	if (octal_string != NULL)
+	if (num != NULL)
 	{
-		_itoa(num, octal_string, 8);
+		_putchar(convert(num, 8), count);
 	}
 	else
 		exit(-1);
-	print(octal_string, count);
-	free(octal_string);
 }
 
 /**
