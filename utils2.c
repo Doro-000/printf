@@ -53,7 +53,7 @@ void print_S(va_list args, int *count)
 {
 	char *string;
 	char *hex;
-	int i = 0;
+	int i = 0, j = 0;
 
 	string = va_arg(args, char *);
 	for (; string[i] != '\0'; i++)
@@ -63,15 +63,17 @@ void print_S(va_list args, int *count)
 		else
 		{
 			hex = malloc(sizeof(char) * (_numlen(string[i], 16)));
-			print("/x", count);
+			print("\\x0", count);
 			_itoa(string[i], hex, 16);
-			for (i = 0; hex[i] != '\0' ;i++)
+			for (; hex[j] != '\0' ;j++)
 			{
-				if (hex[i] >= 97 && hex[i] <= 122)
+				if (hex[j] >= 97 && hex[j] <= 122)
 				{
-					hex[i] -= 32;
+					hex[j] -= 32;
 				}
 			}
+			print(hex, count);
+			free(hex);
 		}
 	}
 }
