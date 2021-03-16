@@ -56,7 +56,7 @@ void print_S(va_list args, int *count)
 	int i = 0, j = 0;
 
 	string = va_arg(args, char *);
-	if (!string)
+	if (string != NULL)
 	{
 		for (; string[i] != '\0'; i++)
 		{
