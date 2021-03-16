@@ -41,6 +41,11 @@ void print_int(va_list args, int *count)
 	char *number_string;
 	int num = va_arg(args, int);
 
+	if ((void *)num == NULL)
+	{
+		_putchar('0', count);
+		return;
+	}
 	number_string = malloc(sizeof(char) * (_numlen(num, 10) + 1));
 	if (number_string != NULL)
 	{
