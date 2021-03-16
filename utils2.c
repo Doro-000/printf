@@ -77,7 +77,8 @@ void print_octal(va_list args, int *count)
  */
 void print_S(va_list args, int *count)
 {
-	char *string, *hex;
+	char *string;
+	char *hex;
 	int i = 0, j = 0;
 
 	string = va_arg(args, char *);
@@ -98,9 +99,7 @@ void print_S(va_list args, int *count)
 					for (; hex[j] != '\0'; j++)
 					{
 						if (hex[j] >= 97 && hex[j] <= 122)
-						{
 							hex[j] -= 32;
-						}
 					}
 					print(hex, count);
 					free(hex);
