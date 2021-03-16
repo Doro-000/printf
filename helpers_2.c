@@ -50,14 +50,15 @@ void (*looper(char format))(va_list, int *)
 		{'i', print_int}, {'s', print_str},
 		{'x', print_hex_x}, {'X', print_hex_X},
 		{'S', print_S}, {'b', print_bin},
-		{'o', print_octal}, {'r', print_rev}
+		{'o', print_octal}, {'r', print_rev},
+		{'R', print_rot13}
 	};
 	int i = 0;
 	void (*f)(va_list, int*);
 
 	f = NULL;
 
-	for (; i < 10; i++)
+	for (; i < 11; i++)
 	{
 		if (format == mapping[i].conversion_specifier)
 		{
