@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_bin - prints an bin to stdout;
+ * print_bin - prints a binary to stdout;
  * @args: variable arguments passed to _printf
  * @count: int to be used by print, see description for print in helpers.c
  *
@@ -33,13 +33,15 @@ void print_bin(va_list args, int *count)
 void print_octal(va_list args, int *count)
 {
 	char *octal_string;
-	unsigned int num = va_arg(args, int);
+	unsigned int num = va_arg(args, unsigned int);
 
 	octal_string = malloc(sizeof(char) * (_numlen(num, 8) + 1));
 	if (octal_string != NULL)
 	{
 		_itoa(num, octal_string, 8);
 	}
+	else
+		exit(-1);
 	print(octal_string, count);
 	free(octal_string);
 }
@@ -90,4 +92,27 @@ void print_S(va_list args, int *count)
 	{
 		print("(null)", count);
 	}
+}
+
+/**
+ * print_rev - reverses and prints a string to stdout;
+ * @args: variable arguments passed to _printf
+ * @count: int to be used by print, see description for print in helpers.c
+ *
+ * Return: void
+ */
+
+void print_rev(va_list args, int *count)
+{
+	char *rev_string;
+
+	rev_string = va_arg(args, char *);
+	if (rev_string != NULL)
+	{
+		reverse_string(rev_string, _strlen(rev_string))
+		print(rev_string, count);
+	}
+	else
+		exit(-1);
+	free(rev_string);
 }
