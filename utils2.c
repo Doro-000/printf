@@ -23,7 +23,7 @@ void print_bin(va_list args, int *count)
 	{
 		_itob(num, bin_string);
 	}
-	print((bin_string + (32 - _numlen(num, 2))), count);
+	print(bin_string, count);
 	free(bin_string);
 }
 
