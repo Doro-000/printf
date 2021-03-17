@@ -52,6 +52,6 @@ int _numlen(int num, int base);
 void (*looper(char format))(va_list, int *);
 char transform(char x);
 void _itob(int num, char *string);
-void _itoux(unsigned int num, char *string, unsigned int base);
+void _itoux(unsigned long num, char *string, unsigned long base);
 
 #endif /*HOLBERTON_H*/
