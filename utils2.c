@@ -11,19 +11,33 @@ void print_bin(va_list args, int *count)
 {
 	int c, k, n;
 
-	n = va_arg(args, int);
-	if (n == 0)
+	num = va_arg(args, int);
+	if (num == 0)
 	{
 		_putchar('0', count);
-		return;
 	}
-	for (c = _numlen(n, 2); c >= 0; c--)
+	else if (num > INT_MAX)
 	{
-		k = n >> c;
-		if (k & 1)
-			_putchar('1', count);
-		else
-			_putchar('0', count);
+		for (c = _numlen(num, 2); c >= 0; c--)
+		{
+			k = num >> c;
+			if (k & 1)
+				_putchar('1', count);
+			else
+				_putchar('0', count);
+		}
+	}
+	else
+	{
+		char *bin_string;
+
+		bin_string = malloc(sizeof(char) * (_numlen(num, 2) + 1));
+		if (bin_string != NULL)
+		{
+			_itoa(num, bin_string, 2);
+		}
+		print(bin_string, count);
+		free(bin_string);
 	}
 }
 
