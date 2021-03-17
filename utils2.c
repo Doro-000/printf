@@ -13,11 +13,6 @@ void print_bin(va_list args, int *count)
 	int num;
 
 	num = va_arg(args, int);
-	if (num == 0)
-	{
-		_putchar('0', count);
-		return;
-	}
 	bin_string = malloc(sizeof(char) * (32+ 1));
 	if (bin_string != NULL)
 	{
