@@ -12,7 +12,12 @@ void print_bin(va_list args, int *count)
 	int c, k, n;
 
 	n = va_arg(args, int);
-	for (c = 31; c >= 0; c--)
+	if (n == 0)
+	{
+		_putchar('0', count);
+		return;
+	}
+	for (c = _numlen(n, 2); c >= 0; c--)
 	{
 		k = n >> c;
 		if (k & 1)
