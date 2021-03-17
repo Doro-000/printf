@@ -50,6 +50,6 @@ void _putchar(char, int *);
 int _numlen(int num, int base);
 void (*looper(char format))(va_list, int *);
 char transform(char x);
-char *_itob(int, char *);
+void _itob(int num, char *string);
 
 #endif /*HOLBERTON_H*/
