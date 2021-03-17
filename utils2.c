@@ -18,6 +18,8 @@ void print_bin(va_list args, int *count)
 	{
 		_itob(num, bin_string);
 	}
+	else
+		exit (-1);
 	print(bin_string, count);
 	free(bin_string);
 }
