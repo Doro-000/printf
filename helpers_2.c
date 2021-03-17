@@ -124,3 +124,46 @@ void _itob(int num, char *string)
 	}
 	*(string + t) = '\0';
 }
+/**
+ * _itoux - converts a number to unsigned
+ * @num: number to be converted
+ * @string: buffer to store the result in
+ * @base: base of number
+ *
+ * Return: the converted string
+ */
+
+void _itoux(unsigned int num, char *string, int base)
+{
+	int i = 0, is_negative = 0, remain = 0, is_intmin = 0;
+
+	if (num == 0)
+	{
+		string[i++] = '0';
+		string[i] = '\0';
+	}
+	if ((num < 0) && (base == 10 || base == 2))
+	{
+		is_negative = 1;
+		if (num == INT_MIN)
+		{
+			num++;
+			is_intmin = 1;
+		}
+		num *= -1;
+	}
+	while (num)
+	{
+		remain = (i == 0 && is_intmin) ? ((num % base) + 1) : (num % base);
+		string[i] = (remain  > 9) ? ((remain - 10) + 'a') : (remain + '0');
+		num /= base;
+		i++;
+	}
+	if (is_negative)
+	{
+		string[i] = '-';
+		i++;
+	}
+	string[i] = '\0';
+	reverse_string(string, _strlen(string));
+}
