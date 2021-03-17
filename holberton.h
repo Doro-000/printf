@@ -37,6 +37,7 @@ char *convert(unsigned int num, int base);
 
 /*--------Utility3 functions---------*/
 void print_rot13(va_list args, int *count);
+void print_unsigned(va_list args, int *count);
 
 /*--------Helper functions---------*/
 /*helpers.c*/
