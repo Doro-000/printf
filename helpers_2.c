@@ -135,33 +135,18 @@ void _itob(int num, char *string)
 
 void _itoux(unsigned int num, char *string, unsigned int base)
 {
-	int i = 0, is_negative = 0, remain = 0, is_intmin = 0;
+	int i = 0, remain = 0;
 
 	if (num == 0)
 	{
 		string[i++] = '0';
 		string[i] = '\0';
 	}
-	if (base == 10 || base == 2)
-	{
-		is_negative = 1;
-		if (num == INT_MIN)
-		{
-			num++;
-			is_intmin = 1;
-		}
-		num *= -1;
-	}
 	while (num)
 	{
-		remain = (i == 0 && is_intmin) ? ((num % base) + 1) : (num % base);
+		remain = num % base;
 		string[i] = (remain  > 9) ? ((remain - 10) + 'a') : (remain + '0');
 		num /= base;
-		i++;
-	}
-	if (is_negative)
-	{
-		string[i] = '-';
 		i++;
 	}
 	string[i] = '\0';
