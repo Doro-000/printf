@@ -34,7 +34,6 @@ void print_rot13(va_list args, int *count)
  */
 void print_unsigned(va_list args, int *count)
 {
-	int i;
 	char *unsigned_string;
 	int num = va_arg(args, int);
 	unsigned int n;
