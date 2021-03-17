@@ -133,7 +133,7 @@ void _itob(int num, char *string)
  * Return: the converted string
  */
 
-void _itoux(unsigned int num, char *string, int base)
+void _itoux(unsigned int num, char *string, unsigned int base)
 {
 	int i = 0, is_negative = 0, remain = 0, is_intmin = 0;
 
@@ -142,7 +142,7 @@ void _itoux(unsigned int num, char *string, int base)
 		string[i++] = '0';
 		string[i] = '\0';
 	}
-	if ((num < 0) && (base == 10 || base == 2))
+	if (base == 10 || base == 2)
 	{
 		is_negative = 1;
 		if (num == INT_MIN)
