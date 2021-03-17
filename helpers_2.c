@@ -108,8 +108,9 @@ void _itob(int num, char *string)
 	int c, d, t;
 
 	t = 0;
-
-	for (c = 31 ; c >= 0 ; c--)
+	if (num == 0)
+		string[t++] = '0';
+	for (c = 31 ; (c >= 0) && (num != 0); c--)
 	{
 		d = num >> c;
 		if (num >> c)
