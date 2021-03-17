@@ -9,36 +9,17 @@
  */
 void print_bin(va_list args, int *count)
 {
-	int c, k, num;
+	char *bin_string;
+	int num;
 
-	num = va_arg(args, int);
-	if (num == 0)
+	num = va_arg(args, int);	
+	bin_string = malloc(sizeof(char) * (32+ 1);
+	if (bin_string != NULL)
 	{
-		_putchar('0', count);
+		_itob(num, bin_string);
 	}
-	else if (num > INT_MAX)
-	{
-		for (c = _numlen(num, 2); c >= 0; c--)
-		{
-			k = num >> c;
-			if (k & 1)
-				_putchar('1', count);
-			else
-				_putchar('0', count);
-		}
-	}
-	else
-	{
-		char *bin_string;
-
-		bin_string = malloc(sizeof(char) * (_numlen(num, 2) + 1));
-		if (bin_string != NULL)
-		{
-			_itoa(num, bin_string, 2);
-		}
-		print(bin_string, count);
-		free(bin_string);
-	}
+	print(bin_string, count);
+	free(bin_string);
 }
 
 /**
