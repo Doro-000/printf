@@ -13,12 +13,12 @@ void print_bin(va_list args, int *count)
 	int num;
 
 	num = va_arg(args, int);	
-	bin_string = malloc(sizeof(char) * (32+ 1);
+	bin_string = malloc(sizeof(char) * (32+ 1));
 	if (bin_string != NULL)
 	{
 		_itob(num, bin_string);
 	}
-	print(bin_string, count);
+	print((bin_string + (32 - _numlen(num, 2))), count);
 	free(bin_string);
 }
 
