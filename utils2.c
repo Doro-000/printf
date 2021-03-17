@@ -9,7 +9,7 @@
  */
 void print_bin(va_list args, int *count)
 {
-	int c, k, n;
+	int c, k, num;
 
 	num = va_arg(args, int);
 	if (num == 0)
