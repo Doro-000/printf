@@ -11,6 +11,8 @@ int _numlen(int num, int base)
 {
 	int len = 0;
 
+	if (num < 0)
+		num *= -1;
 	while (num)
 	{
 		if (base == 10)
@@ -92,4 +94,30 @@ char transform(char x)
 		i++;
 	}
 	return (replacement);
+}
+
+/**
+ * _itob - converts a number to binary
+ * @num: number to be converted
+ * @string: buffer to store the result in
+ *
+ * Return: the converted string
+ */
+void _itob(int num, char *string)
+{
+	int c, d, t;
+
+	t = 0;
+
+	for (c = 31 ; c >= 0 ; c--)
+	{
+		d = num >> c;
+
+		if (d & 1)
+			*(string + t) = 1 + '0';
+		else
+			*(string + t) = 0 + '0';
+		t++;
+	}
+	*(string + t) = '\0';
 }
