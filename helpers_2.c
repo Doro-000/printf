@@ -133,7 +133,7 @@ void _itob(int num, char *string)
  * Return: the converted string
  */
 
-void _itoux(unsigned int num, char *string, unsigned int base)
+void _itoux(unsigned long num, char *string, unsigned long base)
 {
 	int i = 0, remain = 0;
 
