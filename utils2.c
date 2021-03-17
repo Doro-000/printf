@@ -59,7 +59,7 @@ void print_S(va_list args, int *count)
 {
 	char *string;
 	char *hex;
-	int i = 0, j = 0;
+	int i = 0, j;
 
 	string = va_arg(args, char *);
 	if (string != NULL)
@@ -74,7 +74,7 @@ void print_S(va_list args, int *count)
 				else
 					print("\\x0", count);
 				_itoa(string[i], hex, 16);
-				for (; hex[j] != '\0'; j++)
+				for (j = 0; hex[j] != '\0'; j++)
 				{
 					if (hex[j] >= 97 && hex[j] <= 122)
 					{
