@@ -7,21 +7,19 @@
  *
  * Return: void
  */
-
 void print_bin(va_list args, int *count)
 {
-	char *bin_string;
-	unsigned int num = va_arg(args, int);
+	int c, k, n;
 
-	bin_string = malloc(sizeof(char) * (_numlen(num, 2) + 1));
-	if (bin_string != NULL)
+	n = va_arg(args, int);
+	for (c = 31; c >= 0; c--)
 	{
-		_itoa(num, bin_string, 2);
+		k = n >> c;
+		if (k & 1)
+			_putchar('1', count);
+		else
+			_putchar('0', count);
 	}
-	else
-		exit(-1);
-	print(bin_string, count);
-	free(bin_string);
 }
 
 /**
