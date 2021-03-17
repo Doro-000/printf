@@ -64,13 +64,13 @@ void print_hex_x(va_list args, int *count)
 	char *hex_string;
 	int num = va_arg(args, int);
 
-	hex_string = convert(num, 16);
-	if (!num)
+	hex_string = malloc(sizeof(char) * (_numlen(num, 16) + 1));
+	if (hex_string != NULL)
 	{
-		_putchar('0', count);
+		_itoa(num, hex_string, 16);
 	}
-	else
-		print(hex_string, count);
+	print(hex_string, count);
+	free(hex_string);
 }
 
 /**
@@ -84,19 +84,20 @@ void print_hex_X(va_list args, int *count)
 {
 	char *hex_string;
 	int num = va_arg(args, int);
-	int i = 0;
+	int i;
 
-	hex_string = convert(num, 16);
-	if (!num)
+	hex_string = malloc(sizeof(char) * (_numlen(num, 16) + 1));
+	if (hex_string != NULL)
 	{
-		_putchar('0', count);
-	}
-	else
-	{
-		if (hex_string[i] >= 97 && hex_string[i] <= 122)
+		_itoa(num, hex_string, 16);
+		for (i = 0; hex_string[i] != '\0' ; i++)
 		{
-			hex_string[i] -= 32;
+			if (hex_string[i] >= 97 && hex_string[i] <= 122)
+			{
+				hex_string[i] -= 32;
+			}
 		}
 	}
 	print(hex_string, count);
+	free(hex_string);
 }
