@@ -39,7 +39,7 @@ void print_octal(va_list args, int *count)
 	octal_string = malloc(sizeof(char) * (_numlen(num, 8) + 1));
 	if (octal_string != NULL)
 	{
-		_itoa(num, octal_string, 8);
+		_itoux(num, octal_string, 8);
 	}
 	print(octal_string, count);
 	free(octal_string);
