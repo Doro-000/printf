@@ -112,7 +112,7 @@ void _itob(int num, char *string)
 	for (c = 31 ; c >= 0 ; c--)
 	{
 		d = num >> c;
-		if (d != 0)
+		if (num >> c)
 		{
 			if (d & 1)
 				*(string + t) = 1 + '0';
