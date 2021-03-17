@@ -36,7 +36,7 @@ void print_unsigned(va_list args, int *count)
 {
 	char *unsigned_string;
 	int num = va_arg(args, int);
-	unsigned long n;
+	unsigned int n;
 
 	n = num;
 	unsigned_string = malloc(sizeof(char) * (_numlen(n, 10) + 1));
