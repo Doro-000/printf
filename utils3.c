@@ -42,7 +42,7 @@ void print_unsigned(va_list args, int *count)
 	unsigned_string = malloc(sizeof(char) * (_numlen(n, 10) + 1));
 	if (unsigned_string != NULL)
 	{
-		_itoux((UINT_MAX + n), unsigned_string, 10);
+		_itoux((4294967296 + n), unsigned_string, 10);
 		print(unsigned_string, count);
 	}
 	else
