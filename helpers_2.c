@@ -54,13 +54,14 @@ void (*looper(char format))(va_list, int *)
 		{'S', print_S}, {'b', print_bin},
 		{'o', print_octal}, {'r', print_rev},
 		{'R', print_rot13}, {'u', print_unsigned}
+		{'p', print_address}
 	};
 	int i = 0;
 	void (*f)(va_list, int*);
 
 	f = NULL;
 
-	for (; i < 12; i++)
+	for (; i < 13; i++)
 	{
 		if (format == mapping[i].conversion_specifier)
 		{
