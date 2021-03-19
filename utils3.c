@@ -49,3 +49,34 @@ void print_unsigned(va_list args, int *count)
 		exit(-1);
 	free(unsigned_string);
 }
+
+
+/**
+ * print_address - unsigned hex of address
+ * @args: variable arguments passed to _printf
+ * @count: int to be used by _putchar, see _putchar in helpers.c
+ *
+ * Return: void
+ */
+void print_address(va_list args, int *count)
+{
+	char *unsigned_address;
+	unsigned int num;
+	void *n = va_arg(args, void *);
+
+	if (n == NULL)
+	{
+		print("(nil)", count);
+	}
+	num = (unsigned int)va_arg(args, void *)
+	unsigned_address = malloc(sizeof(char) * (_numlen(num, 16) + 1));
+	if (unsigned_address != NULL)
+	{
+		print("0x", count);
+		_itoux((4294967296 + n), unsigned_address, 16);
+		print(unsigned_address, count);
+	}
+	else
+		exit(-1);
+	free(unsigned_address);
+}
