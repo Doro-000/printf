@@ -64,6 +64,9 @@ void print_address(va_list args, int *count)
 	long num = (long)va_arg(args, int *);
 
 	hex_string = malloc(sizeof(char) * (16 + 1));
+	if (num == NULL)
+	{
+		print("(nil)", count);
 	if (hex_string != NULL)
 	{
 	    print("0x", count);
