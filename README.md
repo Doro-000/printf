@@ -20,14 +20,17 @@ The following format specifiers are supported:
 | c      | Single character |
 | s      | String of characters |
 | %      | A % followed by another % character will write a single % |
+| p      | pointer address |
 
 ### Files included
 
 | Type   | Output |
 |--------|--------|
 | helper.c | helper fuctions that work with all the files |
-| helper2.c | secound helper function	|
+| helper2.c | second helper function	|
+| helper3.c | third helper function	|
 | utils.c | format specifiers and parser |
-| utils2.c | secound utils2.c |
+| utils2.c | second utils |
+| utils3.c | third utils |
 | holberton.h | header files |
 | printf.c | main function that runs all the other functions |
