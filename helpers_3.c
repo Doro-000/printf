@@ -9,7 +9,7 @@
  * Return: the converted string
  */
 
-void _itop(long num, char *string, long base)
+void _itop(unsigned long num, char *string, unsigned long base)
 {
 	int i = 0, remain = 0;
 
