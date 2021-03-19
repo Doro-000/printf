@@ -73,7 +73,7 @@ void print_address(va_list args, int *count)
 	if (unsigned_address != NULL)
 	{
 		print("0x", count);
-		_itoux((4294967296 + n), unsigned_address, 16);
+		_itoux((4294967296 + num), unsigned_address, 16);
 		print(unsigned_address, count);
 	}
 	else
