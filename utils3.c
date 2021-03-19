@@ -68,7 +68,7 @@ void print_address(va_list args, int *count)
 	{
 		print("(nil)", count);
 	}
-	num = (unsigned int)va_arg(args, void *)
+	num = (long)va_arg(args, void *)
 	unsigned_address = malloc(sizeof(char) * (_numlen(num, 16) + 1));
 	if (unsigned_address != NULL)
 	{
