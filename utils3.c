@@ -70,14 +70,14 @@ void print_address(va_list args, int *count)
 		print("(nil)", count);
 		return;
 	}
-	else
-		exit (-1);
 	num = (unsigned long)temp;
 	if (hex_string != NULL)
 	{
 	    print("0x", count);
 		_itop(num, hex_string, 16);
 	}
+	else
+		exit (-1);
 	print(hex_string, count);
 	free(hex_string);
 }
