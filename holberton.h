@@ -55,4 +55,7 @@ char transform(char x);
 void _itob(int num, char *string);
 void _itoux(unsigned int num, char *string, unsigned int base);
 
+/*helpers_3.c*/
+void _itop(long num, char *string, long base);
+
 #endif /*HOLBERTON_H*/
