@@ -53,7 +53,7 @@ void (*looper(char format))(va_list, int *)
 		{'x', print_hex_x}, {'X', print_hex_X},
 		{'S', print_S}, {'b', print_bin},
 		{'o', print_octal}, {'r', print_rev},
-		{'R', print_rot13}, {'u', print_unsigned}
+		{'R', print_rot13}, {'u', print_unsigned},
 		{'p', print_address}
 	};
 	int i = 0;
