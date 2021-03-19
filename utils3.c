@@ -60,23 +60,15 @@ void print_unsigned(va_list args, int *count)
  */
 void print_address(va_list args, int *count)
 {
-	char *unsigned_address;
-	unsigned int num;
-	void *n = va_arg(args, void *);
+	char *hex_string;
+	long num = (long)va_arg(args, int *);
 
-	if (n == NULL)
+	hex_string = malloc(sizeof(char) * (16 + 1));
+	if (hex_string != NULL)
 	{
-		print("(nil)", count);
+	    print("0x", count);
+		_itop(num, hex_string, 16);
 	}
-	num = (long)va_arg(args, void *);
-	unsigned_address = malloc(sizeof(char) * (_numlen(num, 16) + 1));
-	if (unsigned_address != NULL)
-	{
-		print("0x", count);
-		_itoux((4294967296 + num), unsigned_address, 16);
-		print(unsigned_address, count);
-	}
-	else
-		exit(-1);
-	free(unsigned_address);
+	print(hex_string, count);
+	free(hex_string);
 }
