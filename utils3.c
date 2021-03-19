@@ -61,7 +61,7 @@ void print_unsigned(va_list args, int *count)
 void print_address(va_list args, int *count)
 {
 	char *hex_string;
-	long num;
+	unsigned long num;
 	void *temp = va_arg(args, int *);
 
 	hex_string = malloc(sizeof(char) * (16 + 1));
@@ -70,7 +70,7 @@ void print_address(va_list args, int *count)
 		print("(nil)", count);
 		return;
 	}
-	num = (long)temp;
+	num = (unsigned long)temp;
 	if (hex_string != NULL)
 	{
 	    print("0x", count);
