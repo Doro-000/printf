@@ -70,6 +70,8 @@ void print_address(va_list args, int *count)
 		print("(nil)", count);
 		return;
 	}
+	else
+		exit (-1);
 	num = (unsigned long)temp;
 	if (hex_string != NULL)
 	{
