@@ -35,5 +35,24 @@ vertical tab
 a single %
 .SH BUGS
 No known bugs. Yet ;)
+.SH EXAMPLE
+#include<stdio.h>
+
+main()
+{
+  int a,b;
+  float c,d;
+
+  a = 14;
+  b = a / 2;
+  printf("%d\n",b);
+  printf("%3d\n",b);
+}
+
+.SH RETURN VALUE
+Upon successful return, these functions return the number of
+characters printed (excluding the null byte used to end output to
+strings).
+
 .SH AUTHOR
 Hizkyas Aberra and Philimon Derib.
